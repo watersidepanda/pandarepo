@@ -10,7 +10,7 @@ node {
 	}
 
 	stage('Test Image'){
-	    aap.inside { sh 'echo "Test Passed"' }	
+	    app.inside { sh 'echo "Test Passed"' }	
 	}
 
 	stage('Push Image') {
