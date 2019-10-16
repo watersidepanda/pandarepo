@@ -19,7 +19,7 @@ RUN echo "NETWORKING=yes" > /etc/sysconfig/network
 # install php
 RUN yum install -y php php-mysql php-devel php-gd php-pecl-memcache php-pspell php-snmp php-xmlrpc php-xml
 
-ADD phpinfo.php /var/www/html/
+ADD /home/tibco/DockerCodes/CC_Docker/phpinfo.php /var/www/html/
 
 EXPOSE 80
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
