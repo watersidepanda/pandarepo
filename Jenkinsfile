@@ -14,7 +14,7 @@ node {
 	}
 
 	stage('Push Image') {
-	    docker.withRegistry('https://github.com/watersidepanda/pandarepo','gitHubCreds')
+	    docker.withRegistry('https://hub.docker.com/r/watersidepanda/pandapubrepo','gitHubCreds')
 	    app.push()
 	}
 }
