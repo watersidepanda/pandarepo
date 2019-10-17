@@ -6,7 +6,7 @@ node {
 	}
 
 	stage('Build Image'){
-	    app = docker.build("watersidepanda/pandapubrepo:t1")
+	    app = docker.build("watersidepanda/pandapubrepo:t2")
 	}
 
 	stage('Test Image'){
@@ -14,7 +14,7 @@ node {
 	}
 
 	stage('Push Image') {
-	    docker.withRegistry('https://hub.docker.com/','dockerHubCreds')
+	    
 	    app.push()
 	}
 }
