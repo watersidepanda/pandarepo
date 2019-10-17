@@ -6,7 +6,7 @@ node {
 	}
 
 	stage('Build Image'){
-	    app = docker.build("watersidepanda/pandapubrepo:t2")
+	    app = docker.build("watersidepanda/pandapubrepo:$BUILD_NUMBER")
 	}
 
 	stage('Test Image'){
@@ -14,7 +14,7 @@ node {
 	}
 
 	stage('Push Image') {
-	    
+	    docker.withRegistry('','dockerhub')
 	    app.push()
 	}
 }
