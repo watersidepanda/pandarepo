@@ -14,7 +14,7 @@ node {
 	}
 
 	stage('Push Image') {
-	    docker.withRegistry('watersidepanda/pandapubrepo','dockerHubCreds','')
+	    docker.withRegistry('','dockerHubCreds')
 	    app.push("${env.BUILD_NUMBER}")
 	    app.push("latest")	
 	}
